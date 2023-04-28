@@ -1,4 +1,4 @@
-package com.example.safee
+package id.novi.safee
 
 import io.flutter.embedding.android.FlutterActivity
 
