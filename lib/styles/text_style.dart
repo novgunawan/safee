@@ -4,6 +4,8 @@ import 'package:safee/styles/style.dart';
 // Heading 1
 TextStyle get heading1StyleBlack =>
     const TextStyle(fontSize: 40, color: black, fontWeight: FontWeight.w700);
+TextStyle get heading1StyleWhite =>
+    const TextStyle(fontSize: 40, color: white, fontWeight: FontWeight.w700);
 
 TextStyle get heading1StylePurple => const TextStyle(
     fontSize: 40, color: primaryPurple, fontWeight: FontWeight.w700);
@@ -32,6 +34,8 @@ TextStyle get heading4StyleGreen => const TextStyle(
 // Body
 TextStyle get bodyBoldStyleBlack =>
     const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: black);
+TextStyle get bodyBoldStylePurple => const TextStyle(
+    fontSize: 18, fontWeight: FontWeight.w700, color: primaryPurple);
 
 TextStyle get bodyBoldStyleWhite =>
     const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: white);
