@@ -43,6 +43,7 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRoute.onGenerateRoute,
+        theme: ThemeData(fontFamily: 'Poppins'),
         builder: EasyLoading.init(),
         navigatorKey: navigatorKey,
       ),
