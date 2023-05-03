@@ -14,10 +14,11 @@ class Indicator extends StatelessWidget {
           height: 12,
           width: 12,
           decoration: BoxDecoration(
-              border: Border.all(
-                  color: index == positionIndex ? primaryOrange : lightGray),
-              color: index == positionIndex ? primaryOrange : lightGray,
-              borderRadius: BorderRadius.circular(100)),
+            border: Border.all(
+                color: index == positionIndex ? primaryOrange : lightGray),
+            color: index == positionIndex ? primaryOrange : lightGray,
+            borderRadius: BorderRadius.circular(100),
+          ),
         );
       },
       valueListenable: currentIndex,

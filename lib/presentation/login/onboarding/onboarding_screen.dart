@@ -124,29 +124,26 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         ),
         const Spacer(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Flexible(
-              child: Visibility(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Visibility(
             visible: widget.isLast ? true : false,
             child: PrimaryButton(
                 title: 'Previous',
                 isPurple: false,
                 callback: () => widget.pageController
                     .previousPage(duration: _kDuration, curve: _kCurve)),
-          )),
+          ),
         ),
         20.0.height,
         Padding(
           padding: const EdgeInsets.only(bottom: 40, left: 10, right: 10),
-          child: Flexible(
-            child: PrimaryButton(
-                title: !widget.isLast ? 'Next' : 'Finish',
-                isPurple: true,
-                callback: () => !widget.isLast
-                    ? widget.pageController
-                        .nextPage(duration: _kDuration, curve: _kCurve)
-                    : () {}),
-          ),
+          child: PrimaryButton(
+              title: !widget.isLast ? 'Next' : 'Finish',
+              isPurple: true,
+              callback: () => !widget.isLast
+                  ? widget.pageController
+                      .nextPage(duration: _kDuration, curve: _kCurve)
+                  : () {}),
         )
       ],
     );
