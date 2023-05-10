@@ -53,6 +53,9 @@ TextStyle get copyRegularStyleBlack =>
 TextStyle get copyRegularStyleGray =>
     const TextStyle(fontSize: 14, color: primaryGray);
 
+TextStyle get copyRegularStyleSecondaryGray =>
+    const TextStyle(fontSize: 14, color: secondaryGray);
+
 // Caption
 TextStyle get captionRegularStyleBlack =>
     const TextStyle(fontSize: 12, color: black);
