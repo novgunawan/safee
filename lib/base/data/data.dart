@@ -42,3 +42,5 @@ List<Map<String, String>> paymentData = [
     "type": "Show All",
   },
 ];
+
+List<String> amounts = ['100', '200', '500'];

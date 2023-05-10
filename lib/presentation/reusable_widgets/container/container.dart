@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safee/extension/widget_extension.dart';
+import 'package:safee/presentation/reusable_widgets/decoration/decoration.dart';
 import 'package:safee/styles/style.dart';
 
 class PurpleContainer extends StatelessWidget {
@@ -9,8 +10,7 @@ class PurpleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.0), color: primaryPurple),
+      decoration: BoxBorderDecoration(backgroundColor: primaryPurple),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         child: widget,
@@ -27,8 +27,7 @@ class PaymentContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.0), color: white),
+      decoration: BoxBorderDecoration(backgroundColor: white),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
         child: Row(
@@ -47,6 +46,59 @@ class PaymentContainer extends StatelessWidget {
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class AmountContainer extends StatelessWidget {
+  const AmountContainer({super.key, required this.amount});
+  final String amount;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        decoration: BoxBorderDecoration(
+            backgroundColor: white, borderColor: primaryGray),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: Text(
+              '\$ $amount',
+              style: bodyRegularStyleBlack,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TopUpContainer extends StatelessWidget {
+  const TopUpContainer(
+      {super.key, required this.leadingWidget, required this.title});
+  final Widget leadingWidget;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 18.0),
+      child: Container(
+        decoration: BoxBorderDecoration(backgroundColor: white),
+        child: ListTile(
+          leading: leadingWidget,
+          title: Text(
+            title,
+            style: copyRegularStyleBlack,
+          ),
+          trailing: const Icon(
+            Icons.chevron_right_rounded,
+            size: 25.0,
+          ),
         ),
       ),
     );

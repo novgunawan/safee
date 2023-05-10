@@ -23,7 +23,7 @@ linter:
      - unnecessary_brace_in_string_interps
      - leading_newlines_in_multiline_strings
     # formatting
-     - lines_longer_than_80_chars
+     - lines_longer_than_80_chars: false
      - curly_braces_in_flow_control_structures
      
     # doc comments

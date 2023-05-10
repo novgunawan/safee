@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:safee/presentation/home/home_screen.dart';
 import 'package:safee/presentation/profile/profile.dart';
 import 'package:safee/presentation/scan/scan.dart';
-import 'package:safee/presentation/top_up/top_up.dart';
+import 'package:safee/presentation/top_up/top_up_screen.dart';
 import 'package:safee/presentation/transfer/transfer.dart';
 import 'package:safee/presentation/reusable_widgets/navbar/custom_navigation_bar.dart';
 import 'package:safee/styles/style.dart';
@@ -21,6 +21,7 @@ class _TabbarState extends State<Tabbar> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: const [
             HomeScreen(),
