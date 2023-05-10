@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
       child: LayoutBuilder(builder: (context, constraints) {
         return SingleChildScrollView(
           child: ConstrainedBox(
@@ -34,13 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   60.0.height,
                   const HomeBalanceWidget(),
-                  25.0.height,
+                  15.0.height,
                   Text(
                     'Payment List',
                     style: bodyBoldStyleBlack,
                   ),
                   Flexible(
                     child: GridView.builder(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      physics: const NeverScrollableScrollPhysics(),
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,

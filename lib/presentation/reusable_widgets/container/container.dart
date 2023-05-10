@@ -42,7 +42,7 @@ class PaymentContainer extends StatelessWidget {
             Flexible(
               child: Text(
                 type,
-                style: copyRegularStyleGray,
+                style: copyRegularStyleSecondaryGray,
                 maxLines: 2,
               ),
             )
