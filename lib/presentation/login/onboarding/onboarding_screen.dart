@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:safee/extension/widget_extension.dart';
-import 'package:safee/presentation/widgets/widget.dart';
+import 'package:safee/presentation/login/login_screen.dart';
+import 'package:safee/presentation/reusable_widgets/widget.dart';
 import 'package:safee/styles/asset.dart';
 import 'package:safee/styles/style.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
-  static const String routeName = '/login';
+  static const String routeName = '/onboarding';
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -16,8 +17,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   //VARIABLES
   PageController _pageController = PageController();
   List<Map<String, dynamic>> onboardingData = [
-    {"image": ONBOARDING_0, "text": "Empower your money, simplify your life."},
-    {"image": ONBOARDING_1, "text": "Live your fullest life.", "isLast": true}
+    {
+      "image": ONBOARDING_0_IMAGE,
+      "text": "Empower your money, simplify your life."
+    },
+    {
+      "image": ONBOARDING_1_IMAGE,
+      "text": "Live your fullest life.",
+      "isLast": true
+    }
   ];
   ValueNotifier<int> currentIndex = ValueNotifier(0);
 
@@ -142,7 +150,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
               callback: () => !widget.isLast
                   ? widget.pageController
                       .nextPage(duration: _kDuration, curve: _kCurve)
-                  : () {}),
+                  : Navigator.of(context).pushNamed(LoginScreen.routeName)),
         )
       ],
     );
