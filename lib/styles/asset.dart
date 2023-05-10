@@ -22,4 +22,6 @@ String STUDY_IMAGE = '$baseImage/study.png';
 String TOPUP_IMAGE = '$baseImage/top-up.png';
 String VOUCHER_GAME_IMAGE = '$baseImage/voucher-game.png';
 String TICKET_IMAGE = '$baseImage/ticket.png';
+String MASTERCARD_IMAGE = '$baseImage/mastercard.png';
+String MANDIRI_IMAGE = '$baseImage/mandiri.png';
 // ICONS

@@ -43,6 +43,9 @@ TextStyle get bodyBoldStyleWhite =>
 TextStyle get bodyRegularStyleBlack =>
     const TextStyle(fontSize: 18, color: black);
 
+TextStyle get bodyRegularStyleGray =>
+    const TextStyle(fontSize: 18, color: primaryGray);
+
 TextStyle get bodyRegularStyleWhite =>
     const TextStyle(fontSize: 18, color: white);
 
