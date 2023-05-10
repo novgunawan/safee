@@ -6,7 +6,7 @@ void main() {
     Environment.production,
     name: 'Production',
     properties: {
-      Keys.apiUrl: 'https://api.dev.company.com',
+      Keys.apiUrl: 'https://22308611-6bca-40dc-8237-fc90ef7b356d.mock.pstmn.io',
     },
   );
   setupApp();
