@@ -10,3 +10,4 @@ const Color secondaryGray = Color(0xFF707070);
 const Color lightGray = Color(0xFFE9E9E9);
 const Color lightGradient = Color(0xFF6850FF);
 const Color heavyGradient = Color(0xFF1700A3);
+const Color shadowColor = Color(0xFFFAFAFA);
