@@ -62,3 +62,13 @@ TextStyle get captionRegularStyleGray =>
 
 TextStyle get captionRegularStyleWhite =>
     const TextStyle(fontSize: 12, color: white);
+
+// Caption 2
+TextStyle get caption2RegularStylePurple =>
+    const TextStyle(fontSize: 10, color: primaryPurple);
+
+TextStyle get caption2RegularStyleGray =>
+    const TextStyle(fontSize: 10, color: primaryGray);
+
+TextStyle get caption2RegularStyleWhite =>
+    const TextStyle(fontSize: 10, color: white);
