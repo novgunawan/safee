@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safee/base/data/data.dart';
 import 'package:safee/extension/widget_extension.dart';
-import 'package:safee/presentation/reusable_widgets/button/button.dart';
-import 'package:safee/presentation/reusable_widgets/container/container.dart';
+import 'package:safee/presentation/reusable_widgets/widget.dart';
 import 'package:safee/styles/asset.dart';
 import 'package:safee/styles/style.dart';
 import 'package:safee/styles/text_style.dart';
@@ -16,6 +15,10 @@ class TopUpScreen extends StatefulWidget {
 
 class _TopUpScreenState extends State<TopUpScreen> {
   final TextEditingController amountController = TextEditingController();
+  ValueNotifier<int> selectedAmount = ValueNotifier(0);
+  ValueNotifier<List<bool>> selectedStatus =
+      ValueNotifier([false, false, false]);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: LayoutBuilder(builder: (context, constraints) {
@@ -36,17 +39,9 @@ class _TopUpScreenState extends State<TopUpScreen> {
                   style: bodyBoldStyleBlack,
                 ),
                 13.0.height,
-                SizedBox(
-                  height: 60,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: amounts.length,
-                    itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: AmountContainer(amount: amounts[index]),
-                    ),
-                  ),
-                ),
+                AmountRow(
+                    selectedStatus: selectedStatus,
+                    amountController: amountController),
                 24.0.height,
                 Text(
                   'How much would you like to top up ?',
@@ -98,35 +93,6 @@ class _TopUpScreenState extends State<TopUpScreen> {
   }
 }
 
-class ValidationTextFormField extends StatelessWidget {
-  const ValidationTextFormField({
-    super.key,
-    required this.controller,
-    required this.hintText,
-    required this.alignment,
-  });
-
-  final TextEditingController controller;
-  final String hintText;
-  final TextAlign alignment;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      autocorrect: false,
-      textAlign: alignment,
-      controller: controller,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-        ),
-        hintText: hintText,
-        hintStyle: bodyRegularStyleGray,
-      ),
-    );
-  }
-}
-
 class BalanceWidget extends StatelessWidget {
   const BalanceWidget({
     super.key,
@@ -150,7 +116,7 @@ class BalanceWidget extends StatelessWidget {
               style: captionRegularStyleWhite,
             ),
             Text(
-              '\$5000.00',
+              '\$00.00',
               style: heading4StyleGreen,
             )
           ],
