@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:safee/bloc/authentication/authentication_bloc.dart';
 import 'package:safee/data/authentication/authentication_data_provider.dart';
+import 'package:safee/data/secure_storage/secure_storage_implementation.dart';
 import 'package:safee/presentation/reusable_widgets/widget.dart';
 import 'package:safee/routes/route_generator.dart';
 import 'package:safee/styles/style.dart';
@@ -19,7 +20,7 @@ class _MainAppState extends State<MainApp> {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   //BloC
   final AuthenticationBloc _authenticationBloc =
-      AuthenticationBloc(AuthenticationDataProvider());
+      AuthenticationBloc(AuthenticationDataProvider(SecureStorageImplement()));
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
