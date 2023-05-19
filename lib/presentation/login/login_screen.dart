@@ -34,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             showLoading();
           } else if (state is LoginSuccessState) {
             hideLoading();
+
             Navigator.of(context).pushNamed(HomeScreen.routeName);
           } else if (state is LoginErrorState) {
             hideLoading();
