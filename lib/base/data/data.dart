@@ -43,4 +43,4 @@ List<Map<String, String>> paymentData = [
   },
 ];
 
-List<String> amounts = ['100', '200', '500'];
+List<int> amounts = [100, 200, 500];

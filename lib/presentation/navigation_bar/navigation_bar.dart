@@ -33,7 +33,6 @@ class _TabbarState extends State<Tabbar> {
         ),
         bottomNavigationBar: Container(
             decoration: BoxDecoration(
-              color: white,
               boxShadow: <BoxShadow>[
                 BoxShadow(
                     color: Colors.grey.withOpacity(0.2),
@@ -41,8 +40,8 @@ class _TabbarState extends State<Tabbar> {
                     offset: const Offset(0, -3.0))
               ],
               borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(49),
-                topRight: Radius.circular(49),
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
               ),
             ),
             child: CustomNavigationBar(

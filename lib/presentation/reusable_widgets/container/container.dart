@@ -53,22 +53,29 @@ class PaymentContainer extends StatelessWidget {
 }
 
 class AmountContainer extends StatelessWidget {
-  const AmountContainer({super.key, required this.amount});
+  const AmountContainer(
+      {super.key,
+      required this.amount,
+      required this.callback,
+      required this.isSelected});
   final String amount;
+  final VoidCallback callback;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: callback,
       child: Container(
         decoration: BoxBorderDecoration(
-            backgroundColor: white, borderColor: primaryGray),
+            backgroundColor: isSelected ? primaryOrange : white,
+            borderColor: isSelected ? primaryOrange : primaryGray),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
             child: Text(
               '\$ $amount',
-              style: bodyRegularStyleBlack,
+              style: isSelected ? bodyBoldStyleWhite : bodyRegularStyleBlack,
             ),
           ),
         ),
