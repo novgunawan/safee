@@ -24,4 +24,5 @@ String VOUCHER_GAME_IMAGE = '$baseImage/voucher-game.png';
 String TICKET_IMAGE = '$baseImage/ticket.png';
 String MASTERCARD_IMAGE = '$baseImage/mastercard.png';
 String MANDIRI_IMAGE = '$baseImage/mandiri.png';
+String PROMO_IMAGE = '$baseImage/promo.png';
 // ICONS

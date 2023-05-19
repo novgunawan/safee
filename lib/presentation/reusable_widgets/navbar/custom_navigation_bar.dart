@@ -22,7 +22,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         color: white,
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: primaryGray.withOpacity(0.2),
             blurRadius: 3.0,
             offset: const Offset(0, -3.0),
           ),
@@ -33,7 +33,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
