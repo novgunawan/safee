@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:safee/bloc/authentication/authentication_bloc.dart';
-import 'package:safee/bloc/authentication/states/get_user_states.dart';
+import 'package:safee/bloc/authentication/states/login_check_states.dart';
 import 'package:safee/extension/widget_extension.dart';
 import 'package:safee/presentation/login/onboarding/onboarding_screen.dart';
 import 'package:safee/presentation/navigation_bar/navigation_bar.dart';
@@ -28,18 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listenWhen: (previous, state) {
-        return state is GetUserSuccessState ||
-            state is GetUserFailedState ||
-            state is GetUserLoadingState;
+        return state is LoginCheckState;
       },
       listener: (context, state) {
-        if (state is GetUserLoadingState) {
+        if (state is LoginCheckState) {
           showLoading();
-        } else if (state is GetUserSuccessState) {
-          navigateToHome();
-        } else if (state is GetUserFailedState) {
-          // navigateToLogin();
-          navigateToHome();
+// *If user is logged in
+          if (state.status) {
+            hideLoading();
+            navigateToHome();
+          } else {
+            hideLoading();
+            navigateToLogin();
+          }
         }
       },
       child: Container(
@@ -74,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void getCurrentUser() async {
-    context.read<AuthenticationBloc>().add(const GetUserEvent());
+    context.read<AuthenticationBloc>().add(const LoginCheckEvent());
   }
 
   void navigateToLogin() {
